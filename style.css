@@ -1,0 +1,67 @@
+.events, .tourists, .hazards, .accidents, .image_box
+.video_box, .Type_box {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.filter_container, #report_form, #postForm{
+    width:40%;
+    position:absolute;
+    top:25%;
+    left:50%;
+    transform:translateX(-50%);
+
+}
+#filter, #descr_box, #location{
+    width:100%;
+}
+#descr_box
+{
+    height:60px;
+}
+#location{
+    height:30px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  #postForm {
+    margin-bottom: 20px;
+  }
+  
+  #postInput {
+    width: 80%;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  #postButton {
+    padding: 5px 10px;
+  }
+  
+  .postItem {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+#postList{
+    border:1px solid #CCC;
+    border-radius: 5px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+#postList:hover {
+    background-color: #f1f1f1;
+  }
+
+.upvote{
+    display:flex;
+    justify-content: space-between;
+    flex-direction:column;
+    align-items: center;
+}
