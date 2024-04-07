@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Posting App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+  <div id="postForm">
+    <div class="chatgroup">
+
+    </div>
+
+    <!-- <div id="upvote">
+        <button id="add" onClick="incrementCounter()">+</button><p id="counter">0</p><button id="sub" onClick="decrementCounter()">-</button>
+    </div> -->
+    <form action="script" method="POST">
+        <input type="text" id="postInput" placeholder="Type your post here..." name="textChat" value="">
+        <button type="submit" id="postButton">Post</button>
+    </form>
+   
+</div>
+  <script src="https://cdn.socket.io/4.3.1/socket.io.min.js"></script>
+  <script>
+    let counterValue = 0;
+
+function incrementCounter() {
+  counterValue++;
+  document.getElementById('counter').innerText = counterValue;
+}
+
+function decrementCounter() {
+  counterValue--;
+  document.getElementById('counter').innerText = counterValue;
+}
+// Get the submit buttom
+const postButton = document.getElementById('postButton');
+
+// Get the input field
+const postInput = document.getElementById('postInput');
+
+// Get the chat group
+const chatGroup = document.querySelector('.chatgroup');
+// Add a new class inside the chat group element
+//const upvotes = document.getElementById('upvote');
+
+postButton.addEventListener('click',(e) => {
+    e.preventDefault();
+    // Get the value of the input field
+    const postText = postInput.value;
+   // create a new class
+    const newPost = document.createElement('div');
+    newPost.classList.add('post');
+    newPost.innerHTML = `<p>${postText}</p>`;
+    //const upvotes = document.querySelector('.upvote');
+    chatGroup.appendChild(newPost);
+    //chatGroup.appendChild(upvotes);
+    postInput.value = '';
+    // Get the upvote button class
+
+});
+
+
+  </script>
+</body>
+</html>
+
